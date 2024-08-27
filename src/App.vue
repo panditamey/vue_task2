@@ -1,18 +1,25 @@
 <template>
   <div id="app">
-    <h3 class="bg-primary text-white text-center m-2 p-2">Todo List</h3>
-
-    <Todo />
+    <ProductList />
   </div>
 </template>
 
 <script>
-import Todo from "./components/TodoList.vue";
+import ProductList from "./components/ProductsList.vue";
 
 export default {
+  components: { ProductList },
   name: "App",
-  components: {
-    Todo,
-  },
 };
 </script>
+
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

@@ -14,7 +14,9 @@
         <div class="col-2 text-center">
           <input type="checkbox" v-model="t.done" class="form-check-input" />
         </div>
-        <button class="btn btn-primary" v-on:click="deleteItem">Delete</button>
+        <button class="btn btn-primary" v-on:click="deleteItem(t)">
+          Delete
+        </button>
       </div>
 
       <!-- Input box -->
@@ -58,8 +60,8 @@ export default {
       this.tasks.push({ action: this.newItemText, done: false });
       this.newItemText = "";
     },
-    deleteItem() {
-      this.tasks.pop();
+    deleteItem(task) {
+      this.tasks.splice(this.tasks.indexOf(task), 1);
     },
   },
 };
